@@ -3,30 +3,28 @@
 {% block content %}
 
     <form action="/todo" method="post">
-        <div>
-            <label for="todo">Задание</label>
+        <div class="d-inline-flex p-2 bd-highlight align-baseline align-items-center">
+            <label class="label mr-2 align-baseline" for="todo">Задание</label>
             <input type="text" id="todo" name="todo">
         </div>
-        <button>Добавить</button>
+        <button class="btn btn-success">Добавить</button>
     </form>
 
-    {% if todos|length > 0 %}
+    <table class="table">
+        {% if todos|length > 0 %}
 
-        <ul>
+                {% for todo in todos %}
 
-            {% for todo in todos %}
+                    <tr><td>{{ todo.text }}</td></tr>
 
-                <li>{{ todo.text }}</li>
+                {% endfor %}
 
-            {% endfor %}
-        </ul>
+        {% else %}
 
-    {% else %}
+            <div>
+                Заданий нет!
+            </div>
 
-        <div>
-            Заданий нет!
-        </div>
-
-    {% endif %}
-
+        {% endif %}
+    </table>
 {% endblock %}
