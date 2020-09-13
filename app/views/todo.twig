@@ -1,0 +1,32 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+    <form action="/todo" method="post">
+        <div>
+            <label for="todo">Задание</label>
+            <input type="text" id="todo" name="todo">
+        </div>
+        <button>Добавить</button>
+    </form>
+
+    {% if todos|length > 0 %}
+
+        <ul>
+
+            {% for todo in todos %}
+
+                <li>{{ todo.text }}</li>
+
+            {% endfor %}
+        </ul>
+
+    {% else %}
+
+        <div>
+            Заданий нет!
+        </div>
+
+    {% endif %}
+
+{% endblock %}

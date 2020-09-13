@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="container">
+    <a href="/todo">Задания</a>
     {% if auth.check() %}
         <p>Вы вошли как {{ auth.user().username }}. <a href="/logout">Выйти</a></p>
     {% else %}

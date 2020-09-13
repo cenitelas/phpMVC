@@ -25,3 +25,5 @@ $router
     ->get('/@{username}',[\App\Controllers\UserController::class, 'show'])
     ->middleware(new \App\Middleware\AuthMiddleware())
     ->setName('users.show');
+$router->get('/todo', [\App\Controllers\TodoController::class, 'show']);
+$router->post('/todo', [\App\Controllers\TodoController::class, 'show']);
