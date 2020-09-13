@@ -1,0 +1,41 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+    <form action="/new-book" method="post">
+        <div>
+            <label for="name">Название</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="author">Автор</label>
+            <input type="text" id="author" name="author">
+        </div>
+        <div>
+            <label for="year">Год</label>
+            <input type="number" min="1970" max="2150" id="year" name="year">
+        </div>
+        <button>Добавить</button>
+
+    </form>
+
+    {% if books|length > 0 %}
+
+        <ul>
+
+        {% for book in books %}
+
+            <li>{{ book.name }}</li>
+
+        {% endfor %}
+        </ul>
+
+    {% else %}
+
+        <div>
+            Книг нет!
+        </div>
+
+    {% endif %}
+
+{% endblock %}

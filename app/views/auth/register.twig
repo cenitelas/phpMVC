@@ -1,0 +1,22 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <h1>Регистрация</h1>
+
+    <form action="/register" method="post">
+
+        <div>
+            <label for="username">Имя пользователя</label>
+            <input type="text" name="username" id="username">
+        </div>
+
+        <div>
+            <label for="password">Пароль</label>
+            <input type="password" name="password" id="password">
+        </div>
+
+        <button>Зарегистрироваться</button>
+
+    </form>
+
+{% endblock %}
